@@ -1,0 +1,22 @@
+.strips__strip {
+    width: 20%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+}
+
+$color-collection: (
+    color1: #244F75,
+    color2: #60BFBF,
+    color3: #8C4B7E,
+    color4: #F8BB44,
+    color5: #F24B4B
+);
+
+@for $i from 1 through 5{  
+    .strips__strip:nth-child(#{$i}){        
+        left: ($i * 20)-20vw;
+        background-color: map-get($color-collection, color#{$i});
+    }
+}
+
